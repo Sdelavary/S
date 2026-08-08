@@ -1,0 +1,252 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[persian]{babel}
+\usepackage{amsmath, amssymb, graphicx, pgfplots, booktabs, array, caption}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\pgfplotsset{compat=1.18}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\let\oldchapter\chapter
+\renewcommand{\chapter}{
+    \fancyfoot[C]{}
+    \oldchapter
+    \thispagestyle{empty}
+    \fancyfoot[C]{\thepage}
+}
+
+\begin{document}
+\pagenumbering{alph}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \textbf{تغذیه درمانی در بیماری‌های مزمن}} \\
+    \vspace{0.5cm}
+    {\Large \textbf{Nutritional Therapy in Chronic Diseases}} \\
+    \vspace{2cm}
+    {\large نویسنده: ...............} \\
+    \vspace{0.3cm}
+    {\large ویراستار: ...............} \\
+    \vspace{2cm}
+    {\large \today}
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+\vspace*{4cm}
+\centering
+\textbf{حقوق محفوظ است.} \\
+همه‌ی حقوق این کتاب برای نویسنده محفوظ است. \\
+هرگونه کپی‌برداری بدون اجازه‌ی کتبی ممنوع است.
+
+\newpage
+\thispagestyle{empty}
+\vspace*{6cm}
+\centering
+تقدیم به ...
+\vspace*{2cm}
+
+\newpage
+\thispagestyle{empty}
+\vspace*{6cm}
+\centering
+سپاس‌گزاری
+\vspace*{2cm}
+
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{مبانی تغذیه و متابولیسم}
+\section{بخش اول: انرژی و نیازهای روزانه}
+\section{بخش دوم: درشت‌مغذی‌ها و نقش آنها}
+\section{بخش سوم: ریز‌مغذی‌ها و تعادل مایعات}
+
+\begin{table}[h]
+\centering
+\caption{نیازهای روزانه‌ی انرژی و درشت‌مغذی‌ها}
+\label{tab:فصل1}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{سن (سال)} & \textbf{جنسیت} & \textbf{کالری (کیلوکالری)} & \textbf{پروتئین (گرم)} & \textbf{کربوهیدرات (گرم)} \\
+\hline
+۱۸-۳۰ & مرد & ۲۴۰۰ & ۵۶ & ۳۳۰ \\
+۱۸-۳۰ & زن & ۲۰۰۰ & ۴۶ & ۲۶۰ \\
+۳۱-۵۰ & مرد & ۲۲۰۰ & ۵۴ & ۳۰۰ \\
+۳۱-۵۰ & زن & ۱۸۰۰ & ۴۴ & ۲۴۰ \\
+۵۱+ & مرد & ۲۰۰۰ & ۵۰ & ۲۷۰ \\
+۵۱+ & زن & ۱۶۰۰ & ۴۰ & ۲۲۰ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={گروه غذایی},
+    ylabel={درصد مصرف},
+    title={هرم غذایی: توزیع درصدی گروه‌های غذایی},
+    symbolic x coords={کربوهیدرات,سبزیجات,میوه‌ها,پروتئین,چربی‌ها},
+    xtick=data,
+    ybar,
+    ymin=0,
+    ymax=40,
+    nodes near coords,
+    nodes near coords align={vertical},
+]
+\addplot coordinates {(کربوهیدرات,30) (سبزیجات,25) (میوه‌ها,20) (پروتئین,15) (چربی‌ها,10)};
+\end{axis}
+\end{tikzpicture}
+\caption{هرم غذایی}
+\label{fig:فصل1}
+\end{figure}
+
+\chapter{تغذیه در دیابت و چاقی}
+\section{بخش اول: کنترل قند خون و شاخص گلیسمی}
+\section{بخش دوم: رژیم‌های کاهش وزن و مدیریت چاقی}
+
+\begin{table}[h]
+\centering
+\caption{شاخص گلیسمی (GI) و بار گلیسمی (GL) مواد غذایی}
+\label{tab:فصل2}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{ماده غذایی} & \textbf{GI} & \textbf{GL} & \textbf{نوع} \\
+\hline
+نان سفید & ۷۰ & ۱۰ & بالا \\
+سیب & ۳۶ & ۶ & پایین \\
+برنج قهوه‌ای & ۵۰ & ۱۶ & متوسط \\
+سیب‌زمینی & ۸۵ & ۲۶ & بالا \\
+عدس & ۲۹ & ۵ & پایین \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={زمان (دقیقه)},
+    ylabel={قند خون (میلی‌گرم/دسی‌لیتر)},
+    title={منحنی قند خون پس از مصرف مواد غذایی},
+    xmin=0,
+    xmax=120,
+    ymin=80,
+    ymax=180,
+    legend pos=north west,
+    grid=both,
+]
+\addplot[thick, red] coordinates {(0,90) (30,160) (60,170) (90,120) (120,95)};
+\addlegendentry{GI بالا}
+\addplot[thick, blue] coordinates {(0,90) (30,110) (60,130) (90,120) (120,100)};
+\addlegendentry{GI پایین}
+\end{axis}
+\end{tikzpicture}
+\caption{منحنی قند خون}
+\label{fig:فصل2}
+\end{figure}
+
+\chapter{تغذیه در بیماری‌های قلبی-عروقی}
+\section{بخش اول: چربی‌های خون و عوامل خطر}
+\section{بخش دوم: رژیم مدیترانه‌ای و سلامت قلب}
+\section{بخش سوم: نقش سدیم و فشار خون}
+\section{بخش چهارم: آنتی‌اکسیدان‌ها و سلامت عروق}
+
+\begin{table}[h]
+\centering
+\caption{ترکیب اسیدهای چرب در روغن‌ها}
+\label{tab:فصل3}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{روغن} & \textbf{اشباع (\%)} & \textbf{تک‌غیراشباع (\%)} & \textbf{چند‌غیراشباع (\%)} & \textbf{ترانس (\%)} \\
+\hline
+زیتون & ۱۴ & ۷۳ & ۱۱ & ۰ \\
+نارگیل & ۸۶ & ۶ & ۲ & ۰ \\
+آفتاب‌گردان & ۱۰ & ۲۰ & ۶۶ & ۰ \\
+کره & ۶۳ & ۲۶ & ۴ & ۳ \\
+مارگارین & ۳۰ & ۴۰ & ۲۰ & ۱۰ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={نوع رژیم غذایی},
+    ylabel={میزان (میلی‌گرم/دسی‌لیتر)},
+    title={مقایسه کلسترول و تری‌گلیسرید در دو رژیم},
+    symbolic x coords={غربی,مدیترانه‌ای},
+    xtick=data,
+    ybar=0.5cm,
+    ymin=0,
+    ymax=250,
+    legend pos=north west,
+    nodes near coords,
+    nodes near coords align={vertical},
+]
+\addplot coordinates {(غربی,220) (مدیترانه‌ای,170)};
+\addplot coordinates {(غربی,180) (مدیترانه‌ای,130)};
+\legend{کلسترول,تری‌گلیسرید}
+\end{axis}
+\end{tikzpicture}
+\caption{مقایسه رژیم‌های غذایی}
+\label{fig:فصل3}
+\end{figure}
+
+\chapter{تغذیه در بیماری‌های کلیوی و سرطان}
+\section{بخش اول: محدودیت‌های غذایی در بیماری کلیوی}
+
+\begin{table}[h]
+\centering
+\caption{محدودیت‌های غذایی در مراحل CKD}
+\label{tab:فصل4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{مرحله CKD} & \textbf{پروتئین (گرم/کیلوگرم)} & \textbf{پتاسیم (میلی‌گرم)} & \textbf{فسفر (میلی‌گرم)} \\
+\hline
+مرحله ۱-۲ & ۰.۸ & ۲۰۰۰ & ۸۰۰ \\
+مرحله ۳ & ۰.۶ & ۱۵۰۰ & ۶۰۰ \\
+مرحله ۴ & ۰.۴ & ۱۰۰۰ & ۵۰۰ \\
+مرحله ۵ (دیالیز) & ۱.۲ & ۲۰۰۰ & ۱۰۰۰ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={مراحل CKD},
+    ylabel={درصد بقا},
+    title={نمودار بقای بیماران کلیوی بر اساس وضعیت تغذیه},
+    symbolic x coords={مرحله۱,مرحله۲,مرحله۳,مرحله۴,مرحله۵},
+    xtick=data,
+    ybar,
+    ymin=0,
+    ymax=100,
+    nodes near coords,
+    nodes near coords align={vertical},
+]
+\addplot coordinates {(مرحله۱,90) (مرحله۲,75) (مرحله۳,55) (مرحله۴,30) (مرحله۵,10)};
+\end{axis}
+\end{tikzpicture}
+\caption{بقای بیماران کلیوی}
+\label{fig:فصل4}
+\end{figure}
+
+\end{document}
